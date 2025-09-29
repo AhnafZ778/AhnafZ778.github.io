@@ -1,1 +1,785 @@
+<!DOCTYPE html>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Dimension by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="logo">
+          <span class="icon yin-yang-wrapper">
+            <svg
+              viewBox="0 0 16 16"
+              class="yin-yang"
+              role="img"
+              aria-hidden="true"
+              fill="currentColor"
+            >
+              <path
+                d="M9.167 4.5a1.167 1.167 0 1 1-2.334 0 1.167 1.167 0 0 1 2.334 0"
+              ></path>
+              <path
+                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1 8a7 7 0 0 1 7-7 3.5 3.5 0 1 1 0 7 3.5 3.5 0 1 0 0 7 7 7 0 0 1-7-7m7 4.667a1.167 1.167 0 1 1 0-2.334 1.167 1.167 0 0 1 0 2.334"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="content">
+          <div class="inner">
+            <h1>Ahnaf Bin Zakaria</h1>
+            <p>Welcome to my Portofolio Website</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!--<li><a href="#elements">Elements</a></li>-->
+          </ul>
+        </nav>
+      </header>
 
+      <!-- Main -->
+      <div id="main">
+        <!-- Intro -->
+        <article id="intro">
+          <h2 class="major">Intro</h2>
+          <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+          <p>
+            I’m <strong>Ahnaf Bin Zakaria</strong>, a Python-focused developer
+            who also works comfortably with Java, HTML5, and CSS. I enjoy taking
+            an idea from rough concept to something that runs cleanly, reads
+            clearly, and can be improved without fear. My current focus:
+            strengthening core fundamentals (data structures, algorithmic
+            thinking, testability, and architectural clarity) while shipping
+            small, useful things consistently.
+          </p>
+
+          <p>You’ll find on this site:</p>
+          <ul>
+            <li>
+              <strong>Projects</strong> that favor clarity over flash (incoming
+              iterations will show incremental improvement, not just polished
+              end states).
+            </li>
+            <li>
+              <strong>Practical problem solving</strong> – scripts, tooling, and
+              small utilities before giant frameworks.
+            </li>
+            <li>
+              <strong>Intentional learning</strong> – I document mistakes and
+              refactors rather than hiding them.
+            </li>
+          </ul>
+
+          <p>
+            The upcoming <a href="#about">About</a> section will go deeper into
+            how I think about design, debugging methodology, iterative
+            improvement, and how I’m shoring up missing fundamentals. For now,
+            this is the snapshot.
+          </p>
+
+          <p>
+            If you’re skimming: I value maintainability, meaningful
+            abstractions, and shipping in small slices. Scroll on to see the
+            work in progress — and feel free to challenge anything you think I
+            can sharpen.
+          </p>
+
+          <p>
+            <em>Next step:</em> Head to <a href="#work">Work</a> for current
+            builds or jump to <a href="#contact">Contact</a> if you want to
+            connect.
+          </p>
+        </article>
+
+        <!-- Work -->
+        <article id="work">
+			<h2 class="major">Pokemon Terminal-Roguelike</h2>
+			<span class="image main"><img src="images/pokemon.jpg" alt="" /></span>
+          <p class="project__tag">Async fetch · Battle logic prototype · JSON heavy</p>
+  </header>
+
+  <p class="project__summary">
+    A terminal roguelike prototype: random area + starter selection, live move + stat retrieval from PokéAPI, ASCII Pokémon display,
+    and a turn‑based battle loop (damage, basic status, move selection). Core focus: learning async I/O, modular data shaping,
+    and reducing startup latency from <span class="metric">193.5s</span> (sequential) to about <span class="metric">20s</span> (batched <code>asyncio</code> calls).
+  </p>
+
+  <ul class="project__highlights">
+    <li><strong>Async layer:</strong> Parallel move & type fetch (aiohttp) instead of blocking loops.</li>
+    <li><strong>Data shaping:</strong> Normalizes raw JSON into move maps + level buckets for future leveling logic.</li>
+    <li><strong>Battle engine start:</strong> Damage calc, type multiplier lookup per move, partial status effects (burn / sleep / confusion).</li>
+    <li><strong>Refactor targets:</strong> Remove sync <code>requests</code>, seedable RNG, caching + retry, pure battle core.</li>
+  </ul>
+
+  <footer class="project__footer">
+    <ul class="project__stack" aria-label="Tech stack">
+      <li>Python</li><li>Asyncio</li><li>aiohttp</li><li>CLI</li><li>JSON</li>
+    </ul>
+    <nav class="project__links" aria-label="Project links">
+      <a class="btn btn--primary" href="https://github.com/AhnafZ778/Pokemon_Rogue_like" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </footer>
+
+  <details class="project__details" id="pokemon-roguelike-notes">
+    <summary>More (scope & next steps)</summary>
+    <div class="project__details-grid">
+      <div>
+        <h4>Current Scope</h4>
+        <ul>
+          <li>Async move retrieval (gathered coroutines)</li>
+          <li>Startup time cut ~90%</li>
+          <li>Basic status handling prototype</li>
+          <li>ASCII sprite injection (inline source)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Immediate Upgrades</h4>
+        <ul>
+          <li>Unify all HTTP calls under aiohttp</li>
+          <li>Add bounded retry + simple disk cache</li>
+          <li>Extract pure battle logic (no print/input)</li>
+          <li>Deterministic seed flag for reproducible tests</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+          <h2 class="major">Google-Drive-Automation</h2>
+          <span class="image main"><img src="images/Drive.jpg" alt="" /></span>
+          <p class="project__tag">Drive API · Link normalization · Export mapping</p>
+  </header>
+
+  <p class="project__summary">
+    Utility that ingests shared Google Drive file / folder URLs, resolves file IDs, queries the Drive API, determines the
+    optimal downloadable form (native Google Docs exported to PDF/DOCX, others via direct download), and writes a clean
+    manifest of stable download links locally (JSON / CSV). Focus: API auth flow, mimeType → export mapping, robust
+    pattern parsing, and idempotent batch processing.
+  </p>
+
+  <ul class="project__highlights">
+    <li><strong>Normalized parsing:</strong> Regex + fallback logic to extract file IDs from multiple share URL shapes.</li>
+    <li><strong>Export intelligence:</strong> Maps Google mimeTypes (Docs / Sheets / Slides) to preferred export formats.</li>
+    <li><strong>Efficient batching:</strong> Minimizes API round‑trips (fields filtering + grouped metadata requests).</li>
+    <li><strong>Reliable manifest:</strong> Deduplicates entries; persists structured JSON & optional CSV for downstream scripts.</li>
+  </ul>
+
+  <footer class="project__footer">
+    <ul class="project__stack" aria-label="Tech stack">
+      <li>Python</li><li>Google Drive API</li><li>Regex</li><li>JSON</li><li>CLI</li>
+    </ul>
+    <nav class="project__links" aria-label="Project links">
+      <a class="btn btn--primary" href="https://github.com/AhnafZ778/Google-Drive-Automation" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </footer>
+
+  <details class="project__details" id="drive-link-extractor-notes">
+    <summary>More (scope & next steps)</summary>
+    <div class="project__details-grid">
+      <div>
+        <h4>Current Scope</h4>
+        <ul>
+          <li>Multiple URL pattern support</li>
+          <li>MimeType → export format mapping</li>
+          <li>Manifest: JSON + optional CSV</li>
+          <li>Duplicate skipping & re-run safe</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Next Improvements</h4>
+        <ul>
+          <li>Add async batching & rate limit backoff</li>
+          <li>Local cache (etag-based freshness)</li>
+          <li>Pluggable output writers (SQLite / S3)</li>
+          <li>CLI packaging (pipx + entry point)</li>
+        </ul>
+      </div>
+    </div>
+        </article>
+
+        <!-- About -->
+        <article id="about">
+          <span class="image  main"><img src="images/idk_3.jpg" alt="" /></span>
+          <h2 class="major">About</h2>
+          <p>
+    I’m <strong>Ahnaf Bin Zakaria</strong> — a Python‑first developer growing depth in
+    Computer Vision, Backend Engineering, AI / ML, and Automation scripting. I focus on clear data
+    shaping, reproducible workflows, and measurable performance improvements. I also work comfortably
+    in multi‑lingual collaboration environments.
+  </p>
+  <p>
+    Current role: <strong>Head of Research</strong> at the student‑led tech startup
+    <strong>Projukti‑Lipi</strong>, where I evaluate feasibility, prototype features, and translate
+    exploratory investigations into actionable engineering tasks.
+  </p>
+
+  <!-- Focus Areas -->
+  <h3 class="major">Focus Areas</h3>
+  <div class="box">
+    <h4>Computer Vision</h4>
+    <ul>
+      <li>Preprocessing discipline (noise, resize, normalization)</li>
+      <li>Trade‑offs: accuracy vs. latency vs. model size</li>
+      <li>Evaluating beyond raw accuracy (precision/recall stability)</li>
+    </ul>
+    <h4>Backend Engineering</h4>
+    <ul>
+      <li>Async I/O & batching to reduce startup / fetch latency</li>
+      <li>Separation of pure logic from side‑effect layers</li>
+      <li>Explicit data contracts (avoid “mystery dicts”)</li>
+    </ul>
+    <h4>AI / ML</h4>
+    <ul>
+      <li>Dataset sanity checks & feature extraction</li>
+      <li>Turning prototypes into maintainable pipelines</li>
+      <li>Benchmarks & reproducible experiment runs (seeded)</li>
+    </ul>
+    <h4>Automation</h4>
+    <ul>
+      <li>API orchestration & concurrency (asyncio)</li>
+      <li>Link/file normalization + manifest generation</li>
+      <li>Lightweight performance profiling for quick wins</li>
+    </ul>
+  </div>
+
+  <!-- Technical Snapshot -->
+  <h3 class="major">Technical Snapshot</h3>
+  <div class="box">
+    <h4>Languages</h4>
+    <ul>
+      <li>Python</li>
+      <li>Java</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+
+    <h4>Current Strengths</h4>
+    <ul>
+      <li>Async fetch + batching speedups</li>
+      <li>JSON normalization & data shaping</li>
+      <li>Prototype → refactor mindset</li>
+      <li>Cross‑cultural collaboration</li>
+    </ul>
+
+    <h4>Improving Next</h4>
+    <ul>
+      <li>Formal pytest suite & coverage discipline</li>
+      <li>Packaging / distribution (CLI, pyproject)</li>
+      <li>Layered system design (caching, idempotency)</li>
+      <li>Model deployment + lightweight monitoring</li>
+    </ul>
+
+    <h4>Principles</h4>
+    <ul>
+      <li>Measure before optimizing</li>
+      <li>Deterministic seeding for reproducibility</li>
+      <li>Readable > clever abstractions</li>
+      <li>Explicit contracts early</li>
+    </ul>
+  </div>
+
+  <!-- Learning Roadmap -->
+  <h3 class="major">Learning Roadmap</h3>
+  <div class="box">
+    <h4>Short Term (2–4 Weeks)</h4>
+    <ul>
+      <li>Refactor Pokémon battle logic into pure core + I/O shell</li>
+      <li>Add caching + retry wrapper for external APIs</li>
+      <li>Introduce seeded randomness for deterministic tests</li>
+      <li>Start pytest suite; target initial 60–70% coverage</li>
+    </ul>
+    <h4>Mid Term (2–3 Months)</h4>
+    <ul>
+      <li>Package one tool for pipx install</li>
+      <li>Benchmark CV inference prototype (CPU baselines)</li>
+      <li>Add structured logging (JSON events)</li>
+      <li>Track startup + fetch latency regressions</li>
+    </ul>
+    <h4>Longer Term</h4>
+    <ul>
+      <li>Deploy small FastAPI inference service</li>
+      <li>Latency + error rate monitoring loop</li>
+      <li>Data drift / simple retraining triggers</li>
+      <li>Expand test strategy (unit → property → scenario)</li>
+    </ul>
+  </div>
+
+  <!-- Collaboration -->
+  <h3 class="major">Collaboration Style</h3>
+  <p>
+    I prefer explicit written specs, concise pull requests, and incremental iteration. In multi‑lingual
+    contexts I surface assumptions early and keep decision logs so teammates can follow trade‑offs quickly.
+  </p>
+        </article>
+
+        <!-- Contact -->
+        <article id="contact">
+  <h2 class="major">Contact</h2>
+
+  <form id="contactForm" novalidate>
+    <!-- Honeypot (bots fill this, humans don’t) -->
+    <input type="text" name="company" id="company" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;padding:0;border:0;">
+
+    <div class="fields">
+      <div class="field half">
+        <label for="name">Name <span aria-hidden="true">*</span></label>
+        <input type="text" name="name" id="name" required minlength="2" maxlength="80" autocomplete="name" />
+      </div>
+      <div class="field half">
+        <label for="email">Email <span aria-hidden="true">*</span></label>
+        <input type="email" name="email" id="email" required maxlength="120" autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="message">Message <span aria-hidden="true">*</span></label>
+        <textarea name="message" id="message" rows="4" required minlength="10" maxlength="2000" placeholder="How can I help?"></textarea>
+      </div>
+    </div>
+
+    <ul class="actions">
+      <li>
+        <button type="submit" class="primary" id="submitBtn">Send Message</button>
+      </li>
+      <li><button type="reset">Reset</button></li>
+    </ul>
+
+    <p id="formStatus" style="margin-top:1rem;font-size:0.8rem;letter-spacing:0.15rem;"></p>
+  </form>
+
+  <noscript>
+    <p><strong>JavaScript disabled:</strong> This form uses asynchronous submission. Enable JS or email me directly at
+      <a href="mailto:ahnafzakaria88@gmail.com">ahnafzakaria88@gmail.com</a>.
+    </p>
+  </noscript>
+
+  <script>
+    (function() {
+      const form = document.getElementById('contactForm');
+      const statusEl = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
+      let formStartTime = Date.now();
+
+      function setStatus(msg, ok=false) {
+        statusEl.textContent = msg;
+        statusEl.style.color = ok ? '#6cf6b4' : '#ff8b7a';
+      }
+
+      function validate() {
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        if (!name || name.length < 2) { setStatus('Name too short.'); return false; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { setStatus('Invalid email.'); return false; }
+        if (!message || message.length < 10) { setStatus('Message too short.'); return false; }
+        if (message.length > 2000) { setStatus('Message too long.'); return false; }
+        return true;
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setStatus('');
+        if (form.company.value) {
+          // Honeypot triggered
+            setStatus('Submission blocked.');
+            return;
+        }
+
+        if ((Date.now() - formStartTime) < 1500) {
+          setStatus('Slow down and try again.'); return;
+        }
+
+        if (!validate()) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        const payload = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          message: form.message.value.trim(),
+          // Optional: could include userAgent/IP server side
+        };
+
+        try {
+          const res = await fetch('/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || ('HTTP ' + res.status));
+          }
+
+          setStatus('Message sent successfully. I will get back to you soon.', true);
+          form.reset();
+          formStartTime = Date.now();
+        } catch (err) {
+          console.error(err);
+          setStatus('Failed to send. Please retry or email directly: ahnafzakaria88@gmail.com');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      });
+    })();
+  </script>
+</article>
+          <ul class="icons">
+            <li>
+              <a href="https://www.linkedin.com/in/ahnaf-zakaria-931590334/" class="icon brands fa-linkedin"
+                ><span class="label">Twitter</span></a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/AhnafZ778" class="icon brands fa-github"
+                ><span class="label">GitHub</span></a
+              >
+            </li>
+          </ul>
+        </article>
+
+        <!-- Elements -->
+        <article id="elements">
+          <h2 class="major">Elements</h2>
+
+          <section>
+            <h3 class="major">Text</h3>
+            <p>
+              This is <b>bold</b> and this is <strong>strong</strong>. This is
+              <i>italic</i> and this is <em>emphasized</em>. This is
+              <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+              This is <u>underlined</u> and this is code:
+              <code>for (;;) { ... }</code>. Finally,
+              <a href="#">this is a link</a>.
+            </p>
+            <hr />
+            <h2>Heading Level 2</h2>
+            <h3>Heading Level 3</h3>
+            <h4>Heading Level 4</h4>
+            <h5>Heading Level 5</h5>
+            <h6>Heading Level 6</h6>
+            <hr />
+            <h4>Blockquote</h4>
+            <blockquote>
+              Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
+              sagittis eget tempus euismod. Vestibulum ante ipsum primis in
+              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
+              ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
+              faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
+            </blockquote>
+            <h4>Preformatted</h4>
+            <pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+          </section>
+
+          <section>
+            <h3 class="major">Lists</h3>
+
+            <h4>Unordered</h4>
+            <ul>
+              <li>Dolor pulvinar etiam.</li>
+              <li>Sagittis adipiscing.</li>
+              <li>Felis enim feugiat.</li>
+            </ul>
+
+            <h4>Alternate</h4>
+            <ul class="alt">
+              <li>Dolor pulvinar etiam.</li>
+              <li>Sagittis adipiscing.</li>
+              <li>Felis enim feugiat.</li>
+            </ul>
+
+            <h4>Ordered</h4>
+            <ol>
+              <li>Dolor pulvinar etiam.</li>
+              <li>Etiam vel felis viverra.</li>
+              <li>Felis enim feugiat.</li>
+              <li>Dolor pulvinar etiam.</li>
+              <li>Etiam vel felis lorem.</li>
+              <li>Felis enim et feugiat.</li>
+            </ol>
+            <h4>Icons</h4>
+            <ul class="icons">
+              <li>
+                <a href="#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-github"
+                  ><span class="label">Github</span></a
+                >
+              </li>
+            </ul>
+
+            <h4>Actions</h4>
+            <ul class="actions">
+              <li><a href="#" class="button primary">Default</a></li>
+              <li><a href="#" class="button">Default</a></li>
+            </ul>
+            <ul class="actions stacked">
+              <li><a href="#" class="button primary">Default</a></li>
+              <li><a href="#" class="button">Default</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="major">Table</h3>
+            <h4>Default</h4>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Item One</td>
+                    <td>Ante turpis integer aliquet porttitor.</td>
+                    <td>29.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Two</td>
+                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                    <td>19.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Three</td>
+                    <td>Morbi faucibus arcu accumsan lorem.</td>
+                    <td>29.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Four</td>
+                    <td>Vitae integer tempus condimentum.</td>
+                    <td>19.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Five</td>
+                    <td>Ante turpis integer aliquet porttitor.</td>
+                    <td>29.99</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>100.00</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+            <h4>Alternate</h4>
+            <div class="table-wrapper">
+              <table class="alt">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Item One</td>
+                    <td>Ante turpis integer aliquet porttitor.</td>
+                    <td>29.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Two</td>
+                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                    <td>19.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Three</td>
+                    <td>Morbi faucibus arcu accumsan lorem.</td>
+                    <td>29.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Four</td>
+                    <td>Vitae integer tempus condimentum.</td>
+                    <td>19.99</td>
+                  </tr>
+                  <tr>
+                    <td>Item Five</td>
+                    <td>Ante turpis integer aliquet porttitor.</td>
+                    <td>29.99</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>100.00</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="major">Buttons</h3>
+            <ul class="actions">
+              <li><a href="#" class="button primary">Primary</a></li>
+              <li><a href="#" class="button">Default</a></li>
+            </ul>
+            <ul class="actions">
+              <li><a href="#" class="button">Default</a></li>
+              <li><a href="#" class="button small">Small</a></li>
+            </ul>
+            <ul class="actions">
+              <li>
+                <a href="#" class="button primary icon solid fa-download"
+                  >Icon</a
+                >
+              </li>
+              <li>
+                <a href="#" class="button icon solid fa-download">Icon</a>
+              </li>
+            </ul>
+            <ul class="actions">
+              <li><span class="button primary disabled">Disabled</span></li>
+              <li><span class="button disabled">Disabled</span></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="major">Form</h3>
+            <form method="post" action="#">
+              <div class="fields">
+                <div class="field half">
+                  <label for="demo-name">Name</label>
+                  <input
+                    type="text"
+                    name="demo-name"
+                    id="demo-name"
+                    value=""
+                    placeholder="Jane Doe"
+                  />
+                </div>
+                <div class="field half">
+                  <label for="demo-email">Email</label>
+                  <input
+                    type="email"
+                    name="demo-email"
+                    id="demo-email"
+                    value=""
+                    placeholder="jane@untitled.tld"
+                  />
+                </div>
+                <div class="field">
+                  <label for="demo-category">Category</label>
+                  <select name="demo-category" id="demo-category">
+                    <option value="">-</option>
+                    <option value="1">Manufacturing</option>
+                    <option value="1">Shipping</option>
+                    <option value="1">Administration</option>
+                    <option value="1">Human Resources</option>
+                  </select>
+                </div>
+                <div class="field half">
+                  <input
+                    type="radio"
+                    id="demo-priority-low"
+                    name="demo-priority"
+                    checked
+                  />
+                  <label for="demo-priority-low">Low</label>
+                </div>
+                <div class="field half">
+                  <input
+                    type="radio"
+                    id="demo-priority-high"
+                    name="demo-priority"
+                  />
+                  <label for="demo-priority-high">High</label>
+                </div>
+                <div class="field half">
+                  <input type="checkbox" id="demo-copy" name="demo-copy" />
+                  <label for="demo-copy">Email me a copy</label>
+                </div>
+                <div class="field half">
+                  <input
+                    type="checkbox"
+                    id="demo-human"
+                    name="demo-human"
+                    checked
+                  />
+                  <label for="demo-human">Not a robot</label>
+                </div>
+                <div class="field">
+                  <label for="demo-message">Message</label>
+                  <textarea
+                    name="demo-message"
+                    id="demo-message"
+                    placeholder="Enter your message"
+                    rows="6"
+                  ></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li>
+                  <input type="submit" value="Send Message" class="primary" />
+                </li>
+                <li><input type="reset" value="Reset" /></li>
+              </ul>
+            </form>
+          </section>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">
+        </p>
+      </footer>
+    </div>
+
+    <!-- BG -->
+    <div id="bg"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
